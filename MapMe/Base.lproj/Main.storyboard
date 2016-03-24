@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kug-Wd-h5Q">
+                                <rect key="frame" x="20" y="20" width="560" height="521"/>
+                            </mapView>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="olh-95-Abk">
+                                <rect key="frame" x="20" y="549" width="560" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-A2-7S8">
+                                <rect key="frame" x="20" y="549" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M15-Qn-30T">
+                                <rect key="frame" x="503" y="549" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="P9P-vR-QND"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="findMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9SB-yV-R74"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="trailing" secondItem="rPs-A2-7S8" secondAttribute="trailing" id="2qN-WN-JyP"/>
+                            <constraint firstItem="rPs-A2-7S8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="35j-Q5-9aS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M15-Qn-30T" secondAttribute="bottom" constant="21" id="4nS-ez-eT0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rPs-A2-7S8" secondAttribute="bottom" constant="30" id="5eW-h6-mi6"/>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="top" secondItem="M15-Qn-30T" secondAttribute="top" id="7MB-15-I4c"/>
+                            <constraint firstItem="Kug-Wd-h5Q" firstAttribute="trailing" secondItem="olh-95-Abk" secondAttribute="trailing" id="B6J-UA-MPe"/>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="leading" secondItem="Kug-Wd-h5Q" secondAttribute="leading" id="a5e-Ui-tjn"/>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="top" secondItem="rPs-A2-7S8" secondAttribute="top" id="bjV-0u-Xsh"/>
+                            <constraint firstItem="Kug-Wd-h5Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f3o-bz-N4y"/>
+                            <constraint firstItem="M15-Qn-30T" firstAttribute="trailing" secondItem="olh-95-Abk" secondAttribute="trailing" id="u9B-yB-OHu"/>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="leading" secondItem="rPs-A2-7S8" secondAttribute="leading" id="vtn-Tv-wiG"/>
+                            <constraint firstItem="olh-95-Abk" firstAttribute="top" secondItem="Kug-Wd-h5Q" secondAttribute="bottom" constant="8" symbolic="YES" id="yDB-PJ-Q7L"/>
+                            <constraint firstItem="rPs-A2-7S8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zr7-YL-9l8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="M15-Qn-30T" id="OGi-qh-gyk"/>
+                        <outlet property="mapView" destination="Kug-Wd-h5Q" id="PDt-xg-43q"/>
+                        <outlet property="progressBar" destination="olh-95-Abk" id="kKe-ic-BbZ"/>
+                        <outlet property="progressLabel" destination="rPs-A2-7S8" id="z3e-1I-IuI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="437"/>
+        </scene>
+    </scenes>
+</document>
